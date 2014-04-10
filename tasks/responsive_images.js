@@ -17,7 +17,7 @@ module.exports = function(grunt) {
 
   var _     = require('lodash');
   var async = require('async');
-  var gm    = require('gm');
+  var gm;
   var path  = require('path');
 
   var DEFAULT_OPTIONS = { 
@@ -81,7 +81,7 @@ module.exports = function(grunt) {
       return grunt.fail.warn('Invalid render engine specified');
     }
     grunt.verbose.ok('Using render engine: ' + GFX_ENGINES[engine].name);
-    gm = gm.subClass({ imageMagick: (engine === 'im') });
+    gm = require('gm').subClass({ imageMagick: (engine === 'im') });
   };
 
   /**
