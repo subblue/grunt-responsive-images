@@ -304,7 +304,7 @@ module.exports = function(grunt) {
       });
 
       checkDirectoryExists(path.join(dirName));
-      return path.join(dirName, baseName + extName);
+      return path.join(dirName, baseName + sizeOptions.outputName + extName);
 
     } else {
       
