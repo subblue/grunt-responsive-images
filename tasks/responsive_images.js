@@ -403,6 +403,10 @@ module.exports = function(grunt) {
                   image.filter(sizeOptions.filter);
                 }
 
+                if (sizeOptions.progressive) {
+                  image.interlace('Line');
+                }
+                
                 image
                   .resize(sizeOptions.width, sizeOptions.height, sizingMethod)
                   .quality(sizeOptions.quality);
