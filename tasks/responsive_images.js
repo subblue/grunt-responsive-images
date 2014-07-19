@@ -407,6 +407,10 @@ module.exports = function(grunt) {
                   image.interlace('Line');
                 }
                 
+                if (sizeOptions.strip) {
+                  image.strip();
+                }
+                
                 image
                   .resize(sizeOptions.width, sizeOptions.height, sizingMethod)
                   .quality(sizeOptions.quality);
