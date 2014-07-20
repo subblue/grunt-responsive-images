@@ -411,6 +411,13 @@ module.exports = function(grunt) {
                   image.strip();
                 }
                 
+                if (sizeOptions.set) {
+                  var key;
+                  for (key in sizeOptions.set) {
+                    image.set(key, sizeOptions.set[key]);
+                  }
+                }
+                
                 image
                   .resize(sizeOptions.width, sizeOptions.height, sizingMethod)
                   .quality(sizeOptions.quality);
